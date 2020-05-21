@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooter : MonoBehaviour
 {
@@ -10,7 +11,16 @@ public class PlayerShooter : MonoBehaviour
     */
     public GameObject[] projetilPrefab;
     public int projetilIndice = 0;
+    public Text txtArma;
 
+    void Awake()
+    {
+        if (!txtArma)
+        {
+            txtArma = GameObject.Find("Armas").GetComponent<Text>();
+            txtArma.text = string.Concat("Arma: ", projetilIndice + 1, "/", projetilPrefab.Length);
+        }
+    }
 
     void Update()
     {
@@ -23,10 +33,17 @@ public class PlayerShooter : MonoBehaviour
             myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         }
 
-        projetilIndice -= (int)Input.mouseScrollDelta.y;
-        if (projetilIndice >= projetilPrefab.Length)
-            projetilIndice = 0;
-        if (projetilIndice < 0)
-            projetilIndice = projetilPrefab.Length - 1;
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            projetilIndice -= (int)Input.mouseScrollDelta.y;
+
+            if (projetilIndice >= projetilPrefab.Length)
+                projetilIndice = 0;
+
+            if (projetilIndice < 0)
+                projetilIndice = projetilPrefab.Length - 1;
+
+            txtArma.text = string.Concat("Arma: ", projetilIndice + 1, "/", projetilPrefab.Length);
+        }
     }
 }
