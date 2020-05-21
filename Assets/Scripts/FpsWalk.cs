@@ -43,6 +43,7 @@ public class FpsWalk : MonoBehaviour
     #region Código do professor
 
     public CharacterController chtr;
+    public float vel = 5;
     Vector3 move,rot;
     void Start()
     {
@@ -60,7 +61,8 @@ public class FpsWalk : MonoBehaviour
         rot.y = Input.GetAxis("Mouse X");
         //conversao de direcao local pra global 
         Vector3 globalmove = transform.TransformDirection(move);
-        chtr.SimpleMove(globalmove * 5);
+        //chtr.SimpleMove(globalmove * 5);
+        chtr.SimpleMove(globalmove * vel);
         transform.Rotate(rot);
     }
 
