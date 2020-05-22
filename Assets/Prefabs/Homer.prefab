@@ -97,7 +97,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projetilPrefab:
-  - {fileID: 6673670539588780027}
+  - {fileID: 5548549513471450705, guid: a7761ac06193bc044ab6be4879129839, type: 3}
+  - {fileID: 123396, guid: d6cec3a81f18b2d4fa72a23d045e1400, type: 3}
+  - {fileID: 107140, guid: 2814676b5158ab342a8ac96a56b12a75, type: 3}
+  - {fileID: 1011168547629336197, guid: 244fce2c1092d1e4687d786d9af4d1c9, type: 3}
+  - {fileID: 3131128909774894430, guid: 602c2dde7cc83874684b2fa245036ec9, type: 3}
+  - {fileID: 4533718420265268263, guid: 2697de739d3124a49a69d4b4964d5d5c, type: 3}
+  - {fileID: 4772759389100106683, guid: 61a3e277079c7484cbc09bedc33efe67, type: 3}
+  - {fileID: 5548549513471450705, guid: 1c05120014281e547935f0def4dae921, type: 3}
+  projetilIndice: 0
+  txtArma: {fileID: 0}
 --- !u!1 &6673670539588780027
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,8 +122,8 @@ GameObject:
   - component: {fileID: 8268256762523272846}
   - component: {fileID: 1387365108}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
+  m_Name: Homer
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3cac00fed342a6f4797d0bf732eb814c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,3 +234,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chtr: {fileID: 0}
+  vel: 10

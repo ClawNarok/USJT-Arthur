@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerShooter : MonoBehaviour
 {
-    /*
-    criar 8 dipos de disparo para o personagem
-    exemplo: explode, incolhe, aumenta, implode, desaparece
-    */
     public GameObject[] projetilPrefab;
     public int projetilIndice = 0;
     public Text txtArma;
@@ -26,11 +22,24 @@ public class PlayerShooter : MonoBehaviour
     {
         float movx = Input.GetAxis("Mouse Y");
         transform.Rotate(new Vector3 (-movx, 0, 0));
+        transform.localRotation = NormalizaY(transform.localRotation);
 
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject myprojectile = Instantiate(projetilPrefab[projetilIndice], transform.position + transform.forward - transform.up, Quaternion.identity);
+            GameObject myprojectile = Instantiate(projetilPrefab[projetilIndice], transform.position + transform.forward, transform.localRotation);
             myprojectile.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            if (FindObjectOfType<BombaRemota>())
+            {
+                var remotas = FindObjectsOfType<BombaRemota>();
+                for (int x = 0; x < remotas.Length; x++)
+                {
+                    remotas[x].ExplodirRemotamente();
+                }
+            }
         }
 
         if (Input.mouseScrollDelta.y != 0)
@@ -45,5 +54,16 @@ public class PlayerShooter : MonoBehaviour
 
             txtArma.text = string.Concat("Arma: ", projetilIndice + 1, "/", projetilPrefab.Length);
         }
+    }
+
+    Quaternion NormalizaY(Quaternion pos)
+    {
+        float x = pos.x;
+        if (x > .5f)
+            x = .5f;
+        if (x < -.5f)
+            x = -.5f;
+        pos = new Quaternion(x, pos.y, pos.z, pos.w);
+        return pos;
     }
 }
