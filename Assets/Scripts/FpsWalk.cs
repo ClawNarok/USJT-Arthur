@@ -16,7 +16,7 @@ public class FpsWalk : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         rot.y = Input.GetAxis("Mouse X");
