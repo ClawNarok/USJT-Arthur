@@ -18,12 +18,15 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float movx = Input.GetAxis("Mouse Y");
         transform.Rotate(new Vector3 (-movx, 0, 0));
         transform.localRotation = NormalizaY(transform.localRotation);
+    }
 
+    void Update()
+    {
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject myprojectile = Instantiate(projetilPrefab[projetilIndice], transform.position + transform.forward, transform.localRotation);
