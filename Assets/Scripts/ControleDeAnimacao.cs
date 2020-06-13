@@ -8,6 +8,7 @@ public class ControleDeAnimacao : MonoBehaviour
     Animator anim;
     public bool Atacando = false;
     public bool Morto = false;
+    public GameObject particulaMorte;
 
 
     void Awake()
@@ -37,6 +38,13 @@ public class ControleDeAnimacao : MonoBehaviour
         Morto = true;
         GetComponent<CapsuleCollider>().enabled = false;
         anim.SetTrigger("Morte");
+        Instantiate(particulaMorte, transform.position, Quaternion.identity);
+        var inimigos = FindObjectsOfType<ControleDeAnimacaoInimigo>();
+        for (int x = 0; x < inimigos.Length; x++)
+        {
+            inimigos[x].Venceu();
+        }
+        StartCoroutine(NovoJogo());
     }
 
     IEnumerator ResetaAtaque()

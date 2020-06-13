@@ -21,6 +21,7 @@ public class Atributos : MonoBehaviour
     public void ReceberDano(int dano)
     {
         vidaAtual -= dano;
+        Instantiate(particulaSofrerDano, transform.position, Quaternion.identity);
         if (vidaAtual <= 0)
         {
             switch (tag)

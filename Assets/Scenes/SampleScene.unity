@@ -40381,6 +40381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1963620216, guid: c7e9efb31b49d9042be53f8b20465d1e, type: 3}
+      propertyPath: vida
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 818413575604849519, guid: c7e9efb31b49d9042be53f8b20465d1e,
         type: 3}
       propertyPath: m_Name
@@ -40441,6 +40445,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3446660786788407070, guid: c7e9efb31b49d9042be53f8b20465d1e,
+        type: 3}
+      propertyPath: particulaMorte
+      value: 
+      objectReference: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7e9efb31b49d9042be53f8b20465d1e, type: 3}
 --- !u!65 &2292178979942598408
@@ -40463,30 +40472,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3241099922513771819, guid: ce4409407d343a840a94a5c79086fa2b,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
+    - target: {fileID: 251581417, guid: ce4409407d343a840a94a5c79086fa2b, type: 3}
+      propertyPath: vida
+      value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 3241099922513771819, guid: ce4409407d343a840a94a5c79086fa2b,
-        type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648576063497407547, guid: ce4409407d343a840a94a5c79086fa2b,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648576063497407547, guid: ce4409407d343a840a94a5c79086fa2b,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648576063497407547, guid: ce4409407d343a840a94a5c79086fa2b,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 122
+    - target: {fileID: 251581418, guid: ce4409407d343a840a94a5c79086fa2b, type: 3}
+      propertyPath: particulaMorte
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5066527452944730317, guid: ce4409407d343a840a94a5c79086fa2b,
         type: 3}

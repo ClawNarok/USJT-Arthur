@@ -9,6 +9,7 @@ public class ControleDeAnimacaoInimigo : MonoBehaviour
     NavMeshAgent agent;
     public bool Atacando = false;
     public bool Morto = false;
+    public GameObject particulaMorte;
 
 
     void Awake()
@@ -25,7 +26,8 @@ public class ControleDeAnimacaoInimigo : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         anim.SetTrigger("Morte");
         agent.isStopped = true;
-        agent.enabled = false;
+        //agent.enabled = false;
+        Instantiate(particulaMorte, transform.position, Quaternion.identity);
         Destroy(gameObject, 10f);
     }
 

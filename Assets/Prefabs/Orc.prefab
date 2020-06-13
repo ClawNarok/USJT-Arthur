@@ -629,6 +629,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Principal: {fileID: 5066527452944730931}
+  particulaDesferirGolpe: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948,
+    type: 3}
 --- !u!1 &5066527452433690358
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,8 +857,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Constraints: 122
+  m_CollisionDetection: 1
 --- !u!195 &3241099922513771819
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -867,11 +869,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -921,6 +923,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Atacando: 0
+  Morto: 0
+  particulaMorte: {fileID: 0}
 --- !u!114 &251581417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,10 +937,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfed799a0d18b4694e6f8940c7d7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 80
+  vida: 90000
   vidaAtual: 0
   dano: 10
-  particulaSofrerDano: {fileID: 0}
+  particulaSofrerDano: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   somSofrerDano: {fileID: 0}
 --- !u!1 &5066527453035984140
 GameObject:

@@ -5,6 +5,8 @@ using UnityEngine;
 public class DetectorDeDano : MonoBehaviour
 {
     public GameObject Principal;
+    [Space(20)]
+    public GameObject particulaDesferirGolpe;
     ControleDeAnimacao ctrAnim;
     ControleDeAnimacaoInimigo ctrAnimIni;
 
@@ -19,7 +21,6 @@ public class DetectorDeDano : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        print(other.name);
         switch (other.tag)
         {
             case "Player":
@@ -36,5 +37,6 @@ public class DetectorDeDano : MonoBehaviour
     void AplicaDano(GameObject gbj)
     {
         gbj.transform.GetComponent<Atributos>().ReceberDano(Principal.GetComponent<Atributos>().dano);
+        Instantiate(particulaDesferirGolpe, gbj.transform.position, Quaternion.identity);
     }
 }
