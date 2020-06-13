@@ -2018,6 +2018,7 @@ GameObject:
   - component: {fileID: 4523181363000072980}
   - component: {fileID: 1185139126210101094}
   - component: {fileID: 3446660786788407070}
+  - component: {fileID: 1963620216}
   m_Layer: 8
   m_Name: DogPolyart
   m_TagString: Player
@@ -2087,9 +2088,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.5
+  m_Height: 2.6801176
   m_Direction: 1
-  m_Center: {x: 0, y: 0.75, z: 0}
+  m_Center: {x: 0, y: 1.3400588, z: 0}
 --- !u!114 &1185139126210101094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,10 +2105,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chao:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   velMove: 15
+  altura: 0.1
+  forcaPulo: 20
   andando: 0
-  pulo: 0
+  noChao: 0
   ataque: 0
 --- !u!114 &3446660786788407070
 MonoBehaviour:
@@ -2121,6 +2124,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2b361e366e8f24d9f122b42b02691d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Atacando: 0
+--- !u!114 &1963620216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818413575604849519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcfed799a0d18b4694e6f8940c7d7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 300
+  vidaAtual: 0
+  dano: 15
+  particulaSofrerDano: {fileID: 0}
+  somSofrerDano: {fileID: 0}
 --- !u!1 &818413575604849521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2396,33 @@ Transform:
   m_Father: {fileID: 818413575605278491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2116679409477170642
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387215310096121585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.09
+  m_Height: 0.99998856
+  m_Direction: 1
+  m_Center: {x: 0.0000001336775, y: -0.66055715, z: 0.00000009819198}
+--- !u!114 &7143856492533234220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387215310096121585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5aca1c1016114649a9a69815e6e8d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Principal: {fileID: 818413575604849519}
 --- !u!1001 &2387215310096087121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2443,6 +2491,12 @@ PrefabInstance:
 --- !u!4 &2387215310095688401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b96201848d117da4ca7dc3ade4bd59de,
+    type: 3}
+  m_PrefabInstance: {fileID: 2387215310096087121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2387215310096121585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: b96201848d117da4ca7dc3ade4bd59de,
     type: 3}
   m_PrefabInstance: {fileID: 2387215310096087121}
   m_PrefabAsset: {fileID: 0}

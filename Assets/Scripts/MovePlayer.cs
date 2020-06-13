@@ -23,7 +23,7 @@ public class MovePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!ctrAnim.Atacando)
+        if (!ctrAnim.Atacando && !ctrAnim.Morto)
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
@@ -59,6 +59,9 @@ public class MovePlayer : MonoBehaviour
 
     void Update()
     {
+        if (ctrAnim.Morto)
+            return;
+
         if (!ctrAnim.Atacando)
         {
             if (Input.GetButton("Fire1"))

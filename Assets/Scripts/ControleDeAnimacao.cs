@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControleDeAnimacao : MonoBehaviour
 {
     Animator anim;
-    public AnimationClip atk1;
-    public AnimationClip atk2;
     public bool Atacando = false;
+    public bool Morto = false;
+
 
     void Awake()
     {
@@ -33,6 +34,8 @@ public class ControleDeAnimacao : MonoBehaviour
 
     public void Morte()
     {
+        Morto = true;
+        GetComponent<CapsuleCollider>().enabled = false;
         anim.SetTrigger("Morte");
     }
 
@@ -42,5 +45,11 @@ public class ControleDeAnimacao : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         anim.SetInteger("Ataque", 0);
         Atacando = false;
+    }
+
+    IEnumerator NovoJogo()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("SampleScene");
     }
 }

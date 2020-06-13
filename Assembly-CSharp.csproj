@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Atributos.cs" />
      <Compile Include="Assets\Scripts\ControleDeAnimacao.cs" />
      <Compile Include="Assets\Scripts\ControleDeAnimacaoInimigo.cs" />
+     <Compile Include="Assets\Scripts\DetectorDeDano.cs" />
      <Compile Include="Assets\Scripts\FpsWalk.cs" />
      <Compile Include="Assets\Scripts\InimigoIA.cs" />
      <Compile Include="Assets\Scripts\MoveCamera.cs" />

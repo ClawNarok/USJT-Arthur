@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - Bomba
   - BombaRemota
+  - Enemy
   layers:
   - Default
   - TransparentFX
