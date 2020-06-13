@@ -55,7 +55,13 @@
      <Compile Include="Assets\_AssetStore\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\_AssetStore\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
      <Compile Include="Assets\_AssetStore\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\Scripts\Atributos.cs" />
+     <Compile Include="Assets\Scripts\ControleDeAnimacao.cs" />
+     <Compile Include="Assets\Scripts\ControleDeAnimacaoInimigo.cs" />
      <Compile Include="Assets\Scripts\FpsWalk.cs" />
+     <Compile Include="Assets\Scripts\InimigoIA.cs" />
+     <Compile Include="Assets\Scripts\MoveCamera.cs" />
+     <Compile Include="Assets\Scripts\MovePlayer.cs" />
      <Compile Include="Assets\Scripts\PlayerShooter.cs" />
      <Compile Include="Assets\Scripts\Tipos de Arma\Bala.cs" />
      <Compile Include="Assets\Scripts\Tipos de Arma\Bomba.cs" />
