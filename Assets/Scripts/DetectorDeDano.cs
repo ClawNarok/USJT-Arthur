@@ -7,12 +7,14 @@ public class DetectorDeDano : MonoBehaviour
     public GameObject Principal;
     [Space(20)]
     public GameObject particulaDesferirGolpe;
+    public AudioClip somDesferirDano;
     ControleDeAnimacao ctrAnim;
     ControleDeAnimacaoInimigo ctrAnimIni;
-
+    AudioSource SFX;
 
     void Awake()
     {
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
         if (Principal.CompareTag("Player"))
             ctrAnim = Principal.transform.GetComponent<ControleDeAnimacao>();
         else
@@ -38,5 +40,6 @@ public class DetectorDeDano : MonoBehaviour
     {
         gbj.transform.GetComponent<Atributos>().ReceberDano(Principal.GetComponent<Atributos>().dano);
         Instantiate(particulaDesferirGolpe, gbj.transform.position, Quaternion.identity);
+        SFX.PlayOneShot(somDesferirDano);
     }
 }

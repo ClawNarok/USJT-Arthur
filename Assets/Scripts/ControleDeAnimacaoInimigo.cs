@@ -10,10 +10,12 @@ public class ControleDeAnimacaoInimigo : MonoBehaviour
     public bool Atacando = false;
     public bool Morto = false;
     public GameObject particulaMorte;
-
+    public AudioClip somMorte;
+    AudioSource SFX;
 
     void Awake()
     {
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -28,6 +30,7 @@ public class ControleDeAnimacaoInimigo : MonoBehaviour
         agent.isStopped = true;
         //agent.enabled = false;
         Instantiate(particulaMorte, transform.position, Quaternion.identity);
+        SFX.PlayOneShot(somMorte);
         Destroy(gameObject, 10f);
     }
 

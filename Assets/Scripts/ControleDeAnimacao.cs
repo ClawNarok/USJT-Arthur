@@ -9,10 +9,12 @@ public class ControleDeAnimacao : MonoBehaviour
     public bool Atacando = false;
     public bool Morto = false;
     public GameObject particulaMorte;
-
+    public AudioClip somMorte;
+    AudioSource SFX;
 
     void Awake()
     {
+        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
 
@@ -39,6 +41,7 @@ public class ControleDeAnimacao : MonoBehaviour
         GetComponent<CapsuleCollider>().enabled = false;
         anim.SetTrigger("Morte");
         Instantiate(particulaMorte, transform.position, Quaternion.identity);
+        SFX.PlayOneShot(somMorte);
         var inimigos = FindObjectsOfType<ControleDeAnimacaoInimigo>();
         for (int x = 0; x < inimigos.Length; x++)
         {

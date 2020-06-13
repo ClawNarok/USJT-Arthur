@@ -22,6 +22,7 @@ public class Atributos : MonoBehaviour
     {
         vidaAtual -= dano;
         Instantiate(particulaSofrerDano, transform.position, Quaternion.identity);
+        SFX.PlayOneShot(somSofrerDano);
         if (vidaAtual <= 0)
         {
             switch (tag)
@@ -34,11 +35,5 @@ public class Atributos : MonoBehaviour
                     break;
             }
         }
-    }
-
-    public void DesferirGolpe(GameObject gbj)
-    {
-        if (gbj.transform.GetComponent<Atributos>().vidaAtual > 0)
-            gbj.transform.GetComponent<Atributos>().ReceberDano(dano);
     }
 }

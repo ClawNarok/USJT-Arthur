@@ -2126,7 +2126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atacando: 0
   Morto: 0
-  particulaMorte: {fileID: 0}
+  particulaMorte: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 3}
+  somMorte: {fileID: 8300000, guid: 5dea04fea48a9405a866bf18fc7534c8, type: 3}
 --- !u!114 &1963620216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,11 +2140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfed799a0d18b4694e6f8940c7d7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 90000
+  vida: 300
   vidaAtual: 0
   dano: 15
   particulaSofrerDano: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
-  somSofrerDano: {fileID: 0}
+  somSofrerDano: {fileID: 8300000, guid: bc545a09d4fcf4856b7e3c00e7acd04c, type: 3}
 --- !u!1 &818413575604849521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,9 +2410,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.09
-  m_Height: 0.99998856
+  m_Height: 1.3099558
   m_Direction: 1
-  m_Center: {x: 0.0000001336775, y: -0.66055715, z: 0.00000009819198}
+  m_Center: {x: 0.00000013357594, y: -0.8155409, z: 0.00000013521515}
 --- !u!114 &7143856492533234220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2427,6 +2428,7 @@ MonoBehaviour:
   Principal: {fileID: 818413575604849519}
   particulaDesferirGolpe: {fileID: 100004, guid: fb7b0526ade434043b350a180d741cf3,
     type: 3}
+  somDesferirDano: {fileID: 8300000, guid: 22eab4df0bfb76b439118c30d20e43b9, type: 3}
 --- !u!1001 &2387215310096087121
 PrefabInstance:
   m_ObjectHideFlags: 0

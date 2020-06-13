@@ -631,6 +631,7 @@ MonoBehaviour:
   Principal: {fileID: 5066527452944730931}
   particulaDesferirGolpe: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948,
     type: 3}
+  somDesferirDano: {fileID: 8300000, guid: cdaaf73197bb7a74bb085cd94afccfba, type: 3}
 --- !u!1 &5066527452433690358
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +892,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5972153
+  m_Radius: 0.87
   m_Height: 1.9235458
   m_Direction: 1
   m_Center: {x: -0.048607588, y: 1.0329132, z: -0.048607707}
@@ -924,7 +925,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Atacando: 0
   Morto: 0
-  particulaMorte: {fileID: 0}
+  particulaMorte: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
+    type: 3}
+  somMorte: {fileID: 8300000, guid: d870a068ac22a4bbe919201a40145fdc, type: 3}
 --- !u!114 &251581417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,11 +940,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfed799a0d18b4694e6f8940c7d7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 90000
+  vida: 80
   vidaAtual: 0
   dano: 10
   particulaSofrerDano: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
-  somSofrerDano: {fileID: 0}
+  somSofrerDano: {fileID: 8300000, guid: 801e3d0e25f37495db3b4ab383b8b80e, type: 3}
 --- !u!1 &5066527453035984140
 GameObject:
   m_ObjectHideFlags: 0
