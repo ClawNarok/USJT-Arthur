@@ -2142,8 +2142,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 300
   vidaAtual: 0
-  dano: 15
+  dano: 50
   particulaSofrerDano: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  particulaCura: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e,
+    type: 3}
   somSofrerDano: {fileID: 8300000, guid: bc545a09d4fcf4856b7e3c00e7acd04c, type: 3}
 --- !u!1 &818413575604849521
 GameObject:
@@ -2443,6 +2445,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b96201848d117da4ca7dc3ade4bd59de, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b96201848d117da4ca7dc3ade4bd59de, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b96201848d117da4ca7dc3ade4bd59de, type: 3}
       propertyPath: m_LocalPosition.x
