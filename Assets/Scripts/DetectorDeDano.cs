@@ -10,11 +10,11 @@ public class DetectorDeDano : MonoBehaviour
     public AudioClip somDesferirDano;
     ControleDeAnimacao ctrAnim;
     ControleDeAnimacaoInimigo ctrAnimIni;
-    AudioSource SFX;
+    EfeitoSonoro SFX;
 
-    void Awake()
+    void Start()
     {
-        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
+        SFX = GameObject.Find("CaixaDeSom").GetComponent<EfeitoSonoro>();
         if (Principal.CompareTag("Player"))
             ctrAnim = Principal.transform.GetComponent<ControleDeAnimacao>();
         else
@@ -30,6 +30,9 @@ public class DetectorDeDano : MonoBehaviour
                     AplicaDano(other.gameObject);
                 break;
             case "Enemy":
+                if (Principal.CompareTag("Enemy"))
+                    return;
+
                 if (ctrAnim.Atacando)
                     AplicaDano(other.gameObject);
                 break;
@@ -40,6 +43,6 @@ public class DetectorDeDano : MonoBehaviour
     {
         gbj.transform.GetComponent<Atributos>().ReceberDano(Principal.GetComponent<Atributos>().dano);
         Instantiate(particulaDesferirGolpe, gbj.transform.position, Quaternion.identity);
-        SFX.PlayOneShot(somDesferirDano);
+        SFX.DisparoSFX(somDesferirDano, transform.position);
     }
 }

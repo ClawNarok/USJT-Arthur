@@ -10,7 +10,6 @@ public class Bombardeio : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        print("Trigueirou!");
         if (col.gameObject == Alvo)
         {
             Instantiate(Efeito, transform.position, Quaternion.identity);

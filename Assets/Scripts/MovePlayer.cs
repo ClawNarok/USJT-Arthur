@@ -10,6 +10,7 @@ public class MovePlayer : MonoBehaviour
     Vector3 mov;
     ControleDeAnimacao ctrAnim;
     public static Vector3 posPlayer;
+    GameObject Seguidor;
 
     public bool andando;
     public bool noChao;
@@ -19,6 +20,7 @@ public class MovePlayer : MonoBehaviour
     {
         ctrAnim = GetComponent<ControleDeAnimacao>();
         rdb = GetComponent<Rigidbody>();
+        Seguidor = FindObjectOfType<MoveCamera>().gameObject;
     }
 
     void FixedUpdate()
@@ -30,7 +32,8 @@ public class MovePlayer : MonoBehaviour
 
             mov = new Vector3(h, 0, v);
 
-            transform.LookAt(transform.position + mov * 3);
+            //transform.LookAt(transform.position + mov * 3);
+            transform.LookAt(transform.position + Seguidor.transform.TransformDirection(mov) * 3);
 
             if (mov.magnitude > 1f)
                 mov.Normalize();
@@ -49,8 +52,10 @@ public class MovePlayer : MonoBehaviour
                 posPlayer = chaoHit.point;
             }
 
-            transform.Translate(0,0, mov.magnitude * velMove * Time.deltaTime);
+            if (mov.magnitude > .1f)
+                transform.Translate(0,0, mov.magnitude * velMove * Time.deltaTime);
 
+            //transform.rotation = Seguidor.transform.rotation;
             ctrAnim.Move(mov.magnitude);
         }
 

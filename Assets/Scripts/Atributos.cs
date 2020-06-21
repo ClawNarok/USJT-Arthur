@@ -9,12 +9,14 @@ public class Atributos : MonoBehaviour
     public int dano;
     [Space(20)]
     public GameObject particulaSofrerDano;
+    public GameObject particulaCura;
     public AudioClip somSofrerDano;
-    AudioSource SFX;
+    EfeitoSonoro SFX;
+    GameObject Cura = null;
 
     void Awake()
     {
-        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
+        SFX = GameObject.Find("CaixaDeSom").GetComponent<EfeitoSonoro>();
         vidaAtual = vida;
     }
 
@@ -22,7 +24,7 @@ public class Atributos : MonoBehaviour
     {
         vidaAtual -= dano;
         Instantiate(particulaSofrerDano, transform.position, Quaternion.identity);
-        SFX.PlayOneShot(somSofrerDano);
+        SFX.DisparoSFX(somSofrerDano, transform.position);
         if (vidaAtual <= 0)
         {
             switch (tag)
@@ -35,5 +37,18 @@ public class Atributos : MonoBehaviour
                     break;
             }
         }
+    }
+
+    void Update()
+    {
+        if (Cura)
+            Cura.transform.position = transform.position + (Vector3.up / 2);
+    }
+
+    public void RegenVida()
+    {
+        vidaAtual = vida;
+        Cura = Instantiate(particulaCura);
+        Destroy(Cura, 3f);
     }
 }

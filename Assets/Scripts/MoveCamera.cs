@@ -16,6 +16,14 @@ public class MoveCamera : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!Player)
+        {
+            if (GameObject.FindGameObjectWithTag("Player"))
+                Player = GameObject.FindGameObjectWithTag("Player");
+
+            return;
+        }
+
         transform.position = Player.transform.position;
         float rot = Input.GetAxis("Mouse X");
 

@@ -26,6 +26,10 @@ public class InimigoIA : MonoBehaviour
     {
         if (ctrAnim.Morto)
             return;
+
+        if (!FindObjectOfType<MovePlayer>())
+            return;
+
         if ((MovePlayer.posPlayer - transform.position).magnitude <= agent.stoppingDistance)
             estadoAtual = EstadoIA.Atacando;
         else
@@ -42,7 +46,5 @@ public class InimigoIA : MonoBehaviour
                     ctrAnim.Atk();
                 break;
         }
-
-
     }
 }

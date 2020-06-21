@@ -11,27 +11,37 @@ public class ControleDeAnimacaoInimigo : MonoBehaviour
     public bool Morto = false;
     public GameObject particulaMorte;
     public AudioClip somMorte;
-    AudioSource SFX;
+    EfeitoSonoro SFX;
 
     void Awake()
     {
-        SFX = GameObject.Find("SFX").GetComponent<AudioSource>();
+        SFX = GameObject.Find("CaixaDeSom").GetComponent<EfeitoSonoro>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
 
     public void Morte()
     {
+        if (Morto)
+            return;
+
         Morto = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Atributos>().RegenVida();
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
         anim.SetTrigger("Morte");
         agent.isStopped = true;
-        //agent.enabled = false;
+        Atacando = false;
+        Morto = true;
         Instantiate(particulaMorte, transform.position, Quaternion.identity);
-        SFX.PlayOneShot(somMorte);
-        Destroy(gameObject, 10f);
+        SFX.DisparoSFX(somMorte, transform.position);
+        var saidas = FindObjectsOfType<Saida>();
+        
+        for (int x = 0; x < saidas.Length; x++)
+            saidas[x].AtivarSaida();
+
+        Destroy(gameObject, 5f);
     }
 
     public void Venceu()
