@@ -56,14 +56,19 @@
      <Compile Include="Assets\_AssetStore\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
      <Compile Include="Assets\_AssetStore\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\Scripts\Atributos.cs" />
+     <Compile Include="Assets\Scripts\AutoSave.cs" />
      <Compile Include="Assets\Scripts\ControleDeAnimacao.cs" />
      <Compile Include="Assets\Scripts\ControleDeAnimacaoInimigo.cs" />
      <Compile Include="Assets\Scripts\DetectorDeDano.cs" />
+     <Compile Include="Assets\Scripts\EfeitoSonoro.cs" />
      <Compile Include="Assets\Scripts\FpsWalk.cs" />
      <Compile Include="Assets\Scripts\InimigoIA.cs" />
      <Compile Include="Assets\Scripts\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
      <Compile Include="Assets\Scripts\PlayerShooter.cs" />
+     <Compile Include="Assets\Scripts\Saida.cs" />
+     <Compile Include="Assets\Scripts\SpawmPlayer.cs" />
+     <Compile Include="Assets\Scripts\Teleporte.cs" />
      <Compile Include="Assets\Scripts\Tipos de Arma\Bala.cs" />
      <Compile Include="Assets\Scripts\Tipos de Arma\Bomba.cs" />
      <Compile Include="Assets\Scripts\Tipos de Arma\BombaAlvo.cs" />
@@ -73,6 +78,7 @@
      <Compile Include="Assets\Scripts\Tipos de Arma\Desintegrate.cs" />
      <Compile Include="Assets\Scripts\Tipos de Arma\Implosao.cs" />
      <Compile Include="Assets\Scripts\Tipos de Arma\Smoke.cs" />
+     <Compile Include="Assets\Scripts\Tocha.cs" />
      <None Include="Assets\_AssetStore\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\_AssetStore\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\_AssetStore\JMO Assets\Cartoon FX\CartoonFX Free.txt" />
